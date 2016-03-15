@@ -55,18 +55,18 @@ class smtp_email
 			$this->show_debug("please enter subject/content");
 			return false;
 		}
-		$detail = "From: ".$from."\r\n";
-		$detail .= "To: ".$to."\r\n";
-		$detail .= "Subject: ".$subject."\r\n";
+		$detail = "From:".$from."\r\n";
+		$detail .= "To:".$to."\r\n";
+		$detail .= "Subject:".$subject."\r\n";
 		if($this->mail_format == 1){
 			$detail .= "Content-Type: text/html;\r\n";
 
 		}else{
 			$detail .= "Content-Type: text/plain;\r\n";
 		}
-		$detail .= "charset=gb2312\r\n\r\n";
+		$detail .= "charset: gb2312;\r\n\r\n";
 		$detail .= $body;
-		$this->do_command("HELO smtp.exmail.qq.com\r\n",250);
+		$this->do_command("HELO ".$this->host."\r\n",250);
 		$this->do_command("AUTH LOGIN\r\n",334);
 		$this->do_command($this->user."\r\n",334);
 		$this->do_command($this->password."\r\n",235);
