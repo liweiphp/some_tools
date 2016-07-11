@@ -1,4 +1,4 @@
-//存储过程
+//存储过程  通过存储过程和事件 实现对一个log已读记录的删除
 create table log(
 	id int(10) not null auto_increment,
 	message varchar(200) null default '0',
