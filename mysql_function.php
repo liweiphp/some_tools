@@ -1,4 +1,4 @@
-//序列的实现利用自定义函数
+//序列的实现利用自定义函数 自定义函数
 
 DROP FUNCTION IF EXISTS currval;
 DELIMITER //
