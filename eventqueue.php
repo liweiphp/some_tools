@@ -1,3 +1,4 @@
+//消息队列
 drop table if exists eventqueue;
 create table eventqueue(
 	qid int(11) not null auto_increment comment '消息序列',
